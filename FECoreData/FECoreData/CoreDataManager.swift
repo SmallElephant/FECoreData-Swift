@@ -19,20 +19,19 @@ class CoreDataManager {
     static let errorDomain = "CoreDataManager"
     
     lazy var managedObjectModel: NSManagedObjectModel = {
+        // 对应存储的模型FECoreData.xcdatamodeld
         let modelURL = Bundle.main.url(forResource: "FECoreData", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
-    // Primary persistent store coordinator for the application.
-    //
+    // 持久化协调器
+    
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         
-        // This implementation creates and return a coordinator, having added the
-        // store for the application to it. (The directory for the store is created, if necessary.)
-        //
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         
         do {
+            // 自动升级选项设置
             let options = [
                 NSMigratePersistentStoresAutomaticallyOption: true,
                 NSInferMappingModelAutomaticallyOption: true
@@ -53,18 +52,8 @@ class CoreDataManager {
         let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         moc.persistentStoreCoordinator = self.persistentStoreCoordinator
         
-        // Avoid using default merge policy in multi-threading environment:
-        // when we delete (and save) a record in one context,
-        // and try to save edits on the same record in the other context before merging the changes,
-        // an exception will be thrown because Core Data by default uses NSErrorMergePolicy.
-        // Setting a reasonable mergePolicy is a good practice to avoid that kind of exception.
-        
+        // 避免多线程中出现问题，如果有属性和内存中都发生了改变，以内存中的改变为主
         moc.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        
-        // In macOS, a context provides an undo manager by default
-        // Disable it for performance benefit
-        //
-        moc.undoManager = nil
         
         return moc
     }()
@@ -102,13 +91,10 @@ class CoreDataManager {
     // 创建私有CoreData存储线程
     func newPrivateQueueContextWithNewPSC() throws -> NSManagedObjectContext {
         
-        // Stack uses the same store and model, but a new persistent store coordinator and context.
+        // 子线程中创建新的持久化协调器
         //
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: CoreDataManager.sharedManager.managedObjectModel)
         
-        // Attempting to add a persistent store may yield an error--pass it out of
-        // the function for the caller to deal with.
-        //
         try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: CoreDataManager.sharedManager.storeURL as URL, options: nil)
         
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
@@ -117,18 +103,8 @@ class CoreDataManager {
             
             context.persistentStoreCoordinator = coordinator
             
-            // Avoid using default merge policy in multi-threading environment:
-            // when we delete (and save) a record in one context,
-            // and try to save edits on the same record in the other context before merging the changes,
-            // an exception will be thrown because Core Data by default uses NSErrorMergePolicy.
-            // Setting a reasonable mergePolicy is a good practice to avoid that kind of exception.
-            //
             context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             
-            // In macOS, a context provides an undo manager by default
-            // Disable it for performance benefit
-            //
-            context.undoManager = nil
         }
         
         return context

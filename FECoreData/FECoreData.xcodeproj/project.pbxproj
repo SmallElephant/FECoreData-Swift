@@ -50,7 +50,7 @@
 		C51AC6CE1E87BD2A0017C09D /* FECoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FECoreDataUITests.swift; sourceTree = "<group>"; };
 		C51AC6D01E87BD2A0017C09D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C51AC6DD1E87BDA70017C09D /* FECoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FECoreData.xcdatamodel; sourceTree = "<group>"; };
-		C51AC6DF1E87BEA30017C09D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C51AC6DF1E87BEA30017C09D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = ../CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +106,8 @@
 				C51AC6B21E87BD2A0017C09D /* Main.storyboard */,
 				C51AC6B51E87BD2A0017C09D /* Assets.xcassets */,
 				C51AC6B71E87BD2A0017C09D /* LaunchScreen.storyboard */,
-				C51AC6DC1E87BDA70017C09D /* FECoreData.xcdatamodeld */,
 				C51AC6BA1E87BD2A0017C09D /* Info.plist */,
-				C51AC6DF1E87BEA30017C09D /* CoreDataManager.swift */,
+				C51AC6E11E87F2370017C09D /* Models */,
 			);
 			path = FECoreData;
 			sourceTree = "<group>";
@@ -129,6 +128,15 @@
 				C51AC6D01E87BD2A0017C09D /* Info.plist */,
 			);
 			path = FECoreDataUITests;
+			sourceTree = "<group>";
+		};
+		C51AC6E11E87F2370017C09D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C51AC6DC1E87BDA70017C09D /* FECoreData.xcdatamodeld */,
+				C51AC6DF1E87BEA30017C09D /* CoreDataManager.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +521,7 @@
 				C51AC6D51E87BD2A0017C09D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C51AC6D61E87BD2A0017C09D /* Build configuration list for PBXNativeTarget "FECoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +530,7 @@
 				C51AC6D81E87BD2A0017C09D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C51AC6D91E87BD2A0017C09D /* Build configuration list for PBXNativeTarget "FECoreDataUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +539,7 @@
 				C51AC6DB1E87BD2A0017C09D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -539,7 +550,8 @@
 				C51AC6DD1E87BDA70017C09D /* FECoreData.xcdatamodel */,
 			);
 			currentVersion = C51AC6DD1E87BDA70017C09D /* FECoreData.xcdatamodel */;
-			path = FECoreData.xcdatamodeld;
+			name = FECoreData.xcdatamodeld;
+			path = ../FECoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
