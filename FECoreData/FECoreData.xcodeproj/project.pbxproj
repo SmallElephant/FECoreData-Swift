@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80659471E8A058100F58E40 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80659441E8A058100F58E40 /* CoreDataManager.swift */; };
+		A80659481E8A058100F58E40 /* FECoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80659451E8A058100F58E40 /* FECoreData.xcdatamodeld */; };
 		C51AC6AF1E87BD2A0017C09D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6AE1E87BD2A0017C09D /* AppDelegate.swift */; };
 		C51AC6B11E87BD2A0017C09D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6B01E87BD2A0017C09D /* ViewController.swift */; };
 		C51AC6B41E87BD2A0017C09D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51AC6B21E87BD2A0017C09D /* Main.storyboard */; };
@@ -14,8 +16,6 @@
 		C51AC6B91E87BD2A0017C09D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51AC6B71E87BD2A0017C09D /* LaunchScreen.storyboard */; };
 		C51AC6C41E87BD2A0017C09D /* FECoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6C31E87BD2A0017C09D /* FECoreDataTests.swift */; };
 		C51AC6CF1E87BD2A0017C09D /* FECoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6CE1E87BD2A0017C09D /* FECoreDataUITests.swift */; };
-		C51AC6DE1E87BDA70017C09D /* FECoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6DC1E87BDA70017C09D /* FECoreData.xcdatamodeld */; };
-		C51AC6E01E87BEA30017C09D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6DF1E87BEA30017C09D /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A80659441E8A058100F58E40 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A80659461E8A058100F58E40 /* FECoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FECoreData.xcdatamodel; sourceTree = "<group>"; };
 		C51AC6AB1E87BD2A0017C09D /* FECoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FECoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51AC6AE1E87BD2A0017C09D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C51AC6B01E87BD2A0017C09D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +51,6 @@
 		C51AC6CA1E87BD2A0017C09D /* FECoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FECoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51AC6CE1E87BD2A0017C09D /* FECoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FECoreDataUITests.swift; sourceTree = "<group>"; };
 		C51AC6D01E87BD2A0017C09D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C51AC6DD1E87BDA70017C09D /* FECoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FECoreData.xcdatamodel; sourceTree = "<group>"; };
-		C51AC6DF1E87BEA30017C09D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = ../CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A80659431E8A057900F58E40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A80659441E8A058100F58E40 /* CoreDataManager.swift */,
+				A80659451E8A058100F58E40 /* FECoreData.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C51AC6A21E87BD2A0017C09D = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +116,7 @@
 				C51AC6B51E87BD2A0017C09D /* Assets.xcassets */,
 				C51AC6B71E87BD2A0017C09D /* LaunchScreen.storyboard */,
 				C51AC6BA1E87BD2A0017C09D /* Info.plist */,
-				C51AC6E11E87F2370017C09D /* Models */,
+				A80659431E8A057900F58E40 /* Models */,
 			);
 			path = FECoreData;
 			sourceTree = "<group>";
@@ -128,15 +137,6 @@
 				C51AC6D01E87BD2A0017C09D /* Info.plist */,
 			);
 			path = FECoreDataUITests;
-			sourceTree = "<group>";
-		};
-		C51AC6E11E87F2370017C09D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C51AC6DC1E87BDA70017C09D /* FECoreData.xcdatamodeld */,
-				C51AC6DF1E87BEA30017C09D /* CoreDataManager.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,9 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C51AC6DE1E87BDA70017C09D /* FECoreData.xcdatamodeld in Sources */,
+				A80659471E8A058100F58E40 /* CoreDataManager.swift in Sources */,
+				A80659481E8A058100F58E40 /* FECoreData.xcdatamodeld in Sources */,
 				C51AC6B11E87BD2A0017C09D /* ViewController.swift in Sources */,
-				C51AC6E01E87BEA30017C09D /* CoreDataManager.swift in Sources */,
 				C51AC6AF1E87BD2A0017C09D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,14 +544,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C51AC6DC1E87BDA70017C09D /* FECoreData.xcdatamodeld */ = {
+		A80659451E8A058100F58E40 /* FECoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C51AC6DD1E87BDA70017C09D /* FECoreData.xcdatamodel */,
+				A80659461E8A058100F58E40 /* FECoreData.xcdatamodel */,
 			);
-			currentVersion = C51AC6DD1E87BDA70017C09D /* FECoreData.xcdatamodel */;
-			name = FECoreData.xcdatamodeld;
-			path = ../FECoreData.xcdatamodeld;
+			currentVersion = A80659461E8A058100F58E40 /* FECoreData.xcdatamodel */;
+			path = FECoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
