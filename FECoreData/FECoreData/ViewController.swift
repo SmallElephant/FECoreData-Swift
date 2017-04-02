@@ -21,9 +21,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Actions
+    
+    @IBAction func addAction(_ sender: UIButton) {
+        
+    }
+    
+    
+    @IBAction func updateAction(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func deleteAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func searchAction(_ sender: UIButton) {
+    }
+    
+    
     func setUp() {
         
-        var order:Order = Order()
+       // var order:Order = Order()
+        
+    
         
     }
 
