@@ -16,6 +16,10 @@
 		C51AC6B91E87BD2A0017C09D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51AC6B71E87BD2A0017C09D /* LaunchScreen.storyboard */; };
 		C51AC6C41E87BD2A0017C09D /* FECoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6C31E87BD2A0017C09D /* FECoreDataTests.swift */; };
 		C51AC6CF1E87BD2A0017C09D /* FECoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC6CE1E87BD2A0017C09D /* FECoreDataUITests.swift */; };
+		C51AC74B1E90A8B40017C09D /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC7471E90A8B40017C09D /* Account+CoreDataClass.swift */; };
+		C51AC74C1E90A8B40017C09D /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC7481E90A8B40017C09D /* Account+CoreDataProperties.swift */; };
+		C51AC74D1E90A8B40017C09D /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC7491E90A8B40017C09D /* Order+CoreDataClass.swift */; };
+		C51AC74E1E90A8B40017C09D /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AC74A1E90A8B40017C09D /* Order+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		C51AC6CA1E87BD2A0017C09D /* FECoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FECoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51AC6CE1E87BD2A0017C09D /* FECoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FECoreDataUITests.swift; sourceTree = "<group>"; };
 		C51AC6D01E87BD2A0017C09D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C51AC7471E90A8B40017C09D /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C51AC7481E90A8B40017C09D /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C51AC7491E90A8B40017C09D /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C51AC74A1E90A8B40017C09D /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,10 @@
 		A80659431E8A057900F58E40 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C51AC7471E90A8B40017C09D /* Account+CoreDataClass.swift */,
+				C51AC7481E90A8B40017C09D /* Account+CoreDataProperties.swift */,
+				C51AC7491E90A8B40017C09D /* Order+CoreDataClass.swift */,
+				C51AC74A1E90A8B40017C09D /* Order+CoreDataProperties.swift */,
 				A80659441E8A058100F58E40 /* CoreDataManager.swift */,
 				A80659451E8A058100F58E40 /* FECoreData.xcdatamodeld */,
 			);
@@ -273,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C51AC74E1E90A8B40017C09D /* Order+CoreDataProperties.swift in Sources */,
+				C51AC74C1E90A8B40017C09D /* Account+CoreDataProperties.swift in Sources */,
 				A80659471E8A058100F58E40 /* CoreDataManager.swift in Sources */,
+				C51AC74D1E90A8B40017C09D /* Order+CoreDataClass.swift in Sources */,
+				C51AC74B1E90A8B40017C09D /* Account+CoreDataClass.swift in Sources */,
 				A80659481E8A058100F58E40 /* FECoreData.xcdatamodeld in Sources */,
 				C51AC6B11E87BD2A0017C09D /* ViewController.swift in Sources */,
 				C51AC6AF1E87BD2A0017C09D /* AppDelegate.swift in Sources */,
