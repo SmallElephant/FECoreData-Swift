@@ -40,7 +40,7 @@ class CoreDataManager {
             try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: self.storeURL as URL, options: options)
         }
         catch {
-            fatalError("持久化存储错误: \(error).")
+            fatalError("FlyElephant持久化存储错误: \(error).")
         }
         
         return persistentStoreCoordinator
@@ -70,12 +70,13 @@ class CoreDataManager {
         
         if fileManager.fileExists(atPath: saveUrl.path) == false {
             let path = saveUrl.path
-            
+            print("文件存储路径:\(path)")
             do {
+                
                 try fileManager.createDirectory(atPath: path, withIntermediateDirectories:true, attributes:nil)
             }
             catch {
-                fatalError("文件存储目录创建失败: \(path).")
+                fatalError("FlyElephant文件存储目录创建失败: \(path).")
             }
         }
         

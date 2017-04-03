@@ -19,4 +19,6 @@ extension Order {
     @NSManaged public var orderName: String?
     @NSManaged public var orderNumber: Int32
 
+    
+    
 }
