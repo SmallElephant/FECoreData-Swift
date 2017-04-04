@@ -9,9 +9,10 @@
     <entity name="Order" representedClassName="Order" syncable="YES">
         <attribute name="orderName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orderNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" syncable="YES"/>
     </entity>
     <elements>
         <element name="Account" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Order" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Order" positionX="-54" positionY="-9" width="128" height="90"/>
     </elements>
 </model>

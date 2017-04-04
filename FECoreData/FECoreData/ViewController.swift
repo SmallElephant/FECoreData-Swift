@@ -26,8 +26,27 @@ class ViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func addAction(_ sender: UIButton) {
-        
-        for i in 1...100 {
+
+        let context:NSManagedObjectContext = CoreDataManager.sharedManager.mainQueueContext
+        let account:Account = NSEntityDescription.insertNewObject(forEntityName: "Account", into: context) as! Account
+        account.accountName = "FlyElephant"
+        account.accountID = "abc-123"
+        account.age = 27
+        account.gender = true
+        if context.hasChanges {
+            do {
+                print("保存成功")
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+
+    }
+    
+    func test() {
+        for i in 1...10 {
             let context:NSManagedObjectContext = CoreDataManager.sharedManager.mainQueueContext
             let order:Order = NSEntityDescription.insertNewObject(forEntityName: "Order", into: context) as! Order
             order.orderName = "台湾小零食--\(i)"
@@ -100,6 +119,37 @@ class ViewController: UIViewController {
         Order.findAllOrders()
     }
     
+    
+    @IBAction func relationAction(_ sender: UIButton) {
+        do {
+
+            let account:Account = Account.findAccountByName(name: "FlyElephant")!
+            
+            let privateContext:NSManagedObjectContext = try CoreDataManager.sharedManager.newPrivateQueueContextWithNewPSC()
+            
+            let order:Order = NSEntityDescription.insertNewObject(forEntityName: "Order", into: privateContext) as! Order
+            order.orderName = "台湾小零食--\(1)"
+            order.orderNumber = Int32(100)
+            
+            print("account的对象ID--\(account.objectID)")
+            let accountInContext:Account = privateContext.object(with: account.objectID) as! Account
+            order.account = accountInContext
+            
+            if privateContext.hasChanges {
+                do {
+                    print("保存成功")
+                    try privateContext.save()
+                } catch {
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
+            }
+        }  catch {
+            print(error)
+        }
+
+        
+    }
     
     func setUp() {
         

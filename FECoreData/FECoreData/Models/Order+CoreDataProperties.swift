@@ -2,7 +2,7 @@
 //  Order+CoreDataProperties.swift
 //  FECoreData
 //
-//  Created by keso on 2017/4/2.
+//  Created by keso on 2017/4/3.
 //  Copyright © 2017年 FlyElephant. All rights reserved.
 //
 
@@ -18,7 +18,6 @@ extension Order {
 
     @NSManaged public var orderName: String?
     @NSManaged public var orderNumber: Int32
+    @NSManaged public var account: Account?
 
-    
-    
 }
