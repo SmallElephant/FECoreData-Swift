@@ -59,6 +59,7 @@
 		C51AC7481E90A8B40017C09D /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C51AC7491E90A8B40017C09D /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C51AC74A1E90A8B40017C09D /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C5694FF21E932FC1007B1E24 /* 2.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2.0.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +564,7 @@
 		A80659451E8A058100F58E40 /* FECoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C5694FF21E932FC1007B1E24 /* 2.0.xcdatamodel */,
 				A80659461E8A058100F58E40 /* FECoreData.xcdatamodel */,
 			);
 			currentVersion = A80659461E8A058100F58E40 /* FECoreData.xcdatamodel */;

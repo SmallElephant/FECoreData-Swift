@@ -121,6 +121,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func relationAction(_ sender: UIButton) {
+        
+       
         do {
 
             let account:Account = Account.findAccountByName(name: "FlyElephant")!
@@ -128,10 +130,9 @@ class ViewController: UIViewController {
             let privateContext:NSManagedObjectContext = try CoreDataManager.sharedManager.newPrivateQueueContextWithNewPSC()
             
             let order:Order = NSEntityDescription.insertNewObject(forEntityName: "Order", into: privateContext) as! Order
-            order.orderName = "台湾小零食--\(1)"
+            order.orderName = "FlyElephant-台湾小零食--\(1)"
             order.orderNumber = Int32(100)
-            
-            print("account的对象ID--\(account.objectID)")
+        
             let accountInContext:Account = privateContext.object(with: account.objectID) as! Account
             order.account = accountInContext
             
