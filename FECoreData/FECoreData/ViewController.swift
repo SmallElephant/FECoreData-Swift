@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
+    
+    var searchOrder:Order?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,26 @@ class ViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func addAction(_ sender: UIButton) {
+        
+        for i in 1...100 {
+            let context:NSManagedObjectContext = CoreDataManager.sharedManager.mainQueueContext
+            let order:Order = NSEntityDescription.insertNewObject(forEntityName: "Order", into: context) as! Order
+            order.orderName = "台湾小零食--\(i)"
+            order.orderNumber = Int32(i)
+            if context.hasChanges {
+                do {
+                    print("保存成功")
+                    try context.save()
+                } catch {
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
+            }
+        }
 
+    }
+    
+    func test() {
         let context:NSManagedObjectContext = CoreDataManager.sharedManager.mainQueueContext
         let account:Account = NSEntityDescription.insertNewObject(forEntityName: "Account", into: context) as! Account
         account.accountName = "FlyElephant"
@@ -40,25 +61,6 @@ class ViewController: UIViewController {
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-
-    }
-    
-    func test() {
-        for i in 1...10 {
-            let context:NSManagedObjectContext = CoreDataManager.sharedManager.mainQueueContext
-            let order:Order = NSEntityDescription.insertNewObject(forEntityName: "Order", into: context) as! Order
-            order.orderName = "台湾小零食--\(i)"
-            order.orderNumber = Int32(i)
-            if context.hasChanges {
-                do {
-                    print("保存成功")
-                    try context.save()
-                } catch {
-                    let nserror = error as NSError
-                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-                }
             }
         }
     }
@@ -91,7 +93,7 @@ class ViewController: UIViewController {
     
     @IBAction func deleteAction(_ sender: UIButton) {
         
-        let number:Int = 80
+        let number:Int = 96
         
         let order:Order? = Order.findOrderByID(id: number)
         
@@ -100,12 +102,15 @@ class ViewController: UIViewController {
             
             let context:NSManagedObjectContext = CoreDataManager.sharedManager.mainQueueContext
             
+            self.searchOrder = order!
+            
             context.delete(order!)
             
             if context.hasChanges {
                 do {
+                    
                     print("\(number)删除成功")
-                    try context.save()
+                   // try context.save()
                 } catch {
                     let nserror = error as NSError
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
@@ -121,8 +126,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func relationAction(_ sender: UIButton) {
-        
-       
         do {
 
             let account:Account = Account.findAccountByName(name: "FlyElephant")!
@@ -148,9 +151,23 @@ class ViewController: UIViewController {
         }  catch {
             print(error)
         }
-
+    }
+    
+    @IBAction func fillAction(_ sender: UIButton) {
+        let context:NSManagedObjectContext = CoreDataManager.sharedManager.mainQueueContext
+        
+        self.searchOrder?.account?.accountName = "FlyElephant"
+        
+        do {
+            print("fill成功")
+            try context.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
         
     }
+    
     
     func setUp() {
         

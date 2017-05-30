@@ -61,6 +61,14 @@
                                     <action selector="relationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yw7-0L-P3w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-Fy-cBp">
+                                <rect key="frame" x="86" y="391" width="167" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="填充"/>
+                                <connections>
+                                    <action selector="fillAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dDj-Gu-qd7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
